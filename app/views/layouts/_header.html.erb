@@ -1,0 +1,23 @@
+<header class="navbar-wrapper">
+      <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+      <div class="container">
+
+        <div class="navbar">
+          <div class="navbar-inner">
+           
+            <a class="brand" href="#">HMHY</a>
+            <a class="label"><%=yield(:title)=%></a>
+            <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+            <div class="nav-collapse collapse pull-right">
+              <ul class="nav">
+                <li><%= link_to "Sign in", '#' %></li>
+                <li><%= link_to "My cart", '#' %></li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div><!-- /.navbar-inner -->
+        </div><!-- /.navbar -->
+
+      </div> <!-- /.container -->
+
+
+    </header>
