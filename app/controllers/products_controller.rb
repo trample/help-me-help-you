@@ -8,6 +8,13 @@ class ProductsController < ApplicationController
 		end
 	end
 
+	def edit
+		@product = Product.find(params[:id])
+		respond_to do |format|
+			format.html # edit.html.erb
+		end
+	end
+
 	def show
 		@product = Product.find(params[:id])
 		respond_to do |format|
@@ -25,13 +32,22 @@ class ProductsController < ApplicationController
 	end
 
 	def create
-		@product = Product.new(params)
+		@product = Product.new(params[:product])
 		respond_to do |format|
 			if @product.save
 				format.html { redirect_to @product, notice: "Report successfully created"}
 			else
 				format.html { render action: "new" }
 				format.json { render json: @product.errors, status: :unprocessable_entity }
+			end
+		end
+	end
+
+	def update
+		@product = Product.find(params[:id])
+		respond_to do |format|
+			if @product.update_attributes(params[:product])
+				format.html { redirect_to @product }
 			end
 		end
 	end
