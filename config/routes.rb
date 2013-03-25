@@ -1,4 +1,6 @@
 HMHY::Application.routes.draw do
+  get "users/new"
+
   root :to => 'products#index'
   resources :products
 
